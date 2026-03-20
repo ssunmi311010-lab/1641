@@ -1,0 +1,33 @@
+HTML
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Web Tetris</title>
+    <style>
+        body { background: #141414; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; }
+        canvas { border: 2px solid #333; background-color: #000; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .info { margin-bottom: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h2>Simple Tetris</h2>
+        <p>방향키: 이동 / 위 방향키: 회전</p>
+    </div>
+    <canvas id="tetris" width="300" height="600"></canvas>
+
+<script>
+    const canvas = document.getElementById('tetris');
+    const context = canvas.getContext('2d');
+    const BLOCK_SIZE = 30;
+    const GRID_WIDTH = 10;
+    const GRID_HEIGHT = 20;
+
+    const COLORS = [
+        null,
+        '#00ffff', '#0000ff', '#ffa500', '#ffff00', '#00ff00', '#800080', '#ff0000'
+    ];
+
+    const SHAPES = [
+        [
